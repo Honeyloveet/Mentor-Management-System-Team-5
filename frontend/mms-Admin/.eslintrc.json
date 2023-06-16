@@ -1,41 +1,47 @@
 {
     "env": {
         "browser": true,
-        "es2021": true,
         "node": true,
-        "jest": true
+        "es2021": true
     },
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended",
+        "plugin:react/jsx-runtime",
+        // "plugin:jsx-a11y/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:jest/recommended",
+        "plugin:testing-library/react",
         "prettier"
     ],
-    "overrides": [],
-    "parser": "@typescript-eslint/parser",
     "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
     "plugins": [
         "react",
-        "@typescript-eslint",
-        "react-hooks",
         "prettier"
     ],
     "rules": {
         "indent": [
-            "error",
-            2
+            "off"
         ],
         "linebreak-style": [
             "error",
-            "unix"
+            "windows"
         ],
         "quotes": [
             "error",
             "double"
         ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "react/jsx-uses-react": "error",
         "react/jsx-uses-vars": "error",
         "comma-dangle": [
             "error",
@@ -55,18 +61,16 @@
                 "html": true
             }
         ],
+        // "react/jsx-closing-bracket-location": [
+        //     2,
+        //     {
+        //         "selfClosing": "props-aligned",
+        //         "nonEmpty": "after-props"
+        //     }
+        // ]
         "react/jsx-closing-bracket-location": [
             2,
             "tag-aligned"
-        ],
-        "no-duplicate-imports": "error"
-    },
-    "settings": {
-        "import/resolver": {
-            "typescript": {}
-        }
-    },
-    "globals": {
-        "process": true
+        ]
     }
 }
